@@ -3,6 +3,7 @@ http = require('http'),
 noun_previews = require('./my-noun-previews.js');
 
 http.createServer(function (request, response) {
+    response.header('Access-Control-Allow-Origin', '*');
     if (request.method == 'POST') {
 	    var body = '';
 		request.on('data', function (data) {
